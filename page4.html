@@ -3,37 +3,46 @@
     File: "/usr/cs/undergrad/2020/xwang3/public_html/page1.html"
     91.61 GUI Programming I Assignment 1: Creating Your First Web Page
     Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
-    Created July 10, 2020
+    Created July 13, 2020
     Currently blank(ish) filler page 4
 -->
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>This is page 4</title>
+        <title>Xuhao's Index Page</title>
+
         <!-- stylesheets -->
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-        <!-- scripts -->
-        <script type="text/javascript" src="/file.js"></script>
+
+        <!--Import the font "Open Sans" from Google font API-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
     </head>
     <body>
         <header>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="page1.html">Page 1</a>
-                <a href="page2.html">Page 2</a>
-                <a href="page3.html">Page 3</a>
-                <a href="page4.html">Page 4</a>
+                <a href="index.html" alt="Link to home page">Home</a>
+                <a href="page1.html" alt="Link to page 1" class="complete">1</a>
+                <a href="page2.html" alt="Link to page 2">2</a>
+                <a href="page3.html" alt="Link to page 3">3</a>
+                <a href="page4.html" alt="Link to page 4">4</a>
+                <a href="page5.html" alt="Link to page 5">5</a>
+                <a href="page6.html" alt="Link to page 6">6</a>
+                <a href="page7.html" alt="Link to page 7">7</a>
             </nav>
         </header>
+
+        <nav class="left_nav">
+            <a href="page3.html" alt="Sidebar link to page 3">Home</a>
+        </nav>
         
-        <div id="main">
+        <nav class="right_nav">
+            <a href="page5.html" alt="Sidebar link to page 5">5</a>
+        </nav>
+
+        <div class="main">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Optio sit ipsa mollitia blanditiis aperiam molestiae, magnam
-                dignissimos voluptas atque minus repellat nesciunt, architecto a sunt,
-                velit illum in iste eius!
+                Filler for page 4
             </p>
         </div>
-    </body>
+        </body>
 </html>

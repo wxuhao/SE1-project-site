@@ -7,33 +7,126 @@
     Currently blank(ish) filler page 1
 -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>This is page 1</title>
-        <!-- stylesheets -->
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-        <!-- scripts -->
-        <script type="text/javascript" src="/file.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="page1.html">Page 1</a>
-                <a href="page2.html">Page 2</a>
-                <a href="page3.html">Page 3</a>
-                <a href="page4.html">Page 4</a>
-            </nav>
-        </header>
-        
-        <div id="main">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Optio sit ipsa mollitia blanditiis aperiam molestiae, magnam
-                dignissimos voluptas atque minus repellat nesciunt, architecto a sunt,
-                velit illum in iste eius!
+<head>
+    <meta charset="utf-8">
+    <title>Xuhao's Index Page</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_page1.css">
+
+    <!--Import the font "Open Sans" from Google font API-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+<body>
+    <header id="top">
+        <nav>
+            <a href="index.html" alt="Link to home page">Home</a>
+            <a href="page1.html" alt="Link to page 1" class="complete">1</a>
+            <a href="page2.html" alt="Link to page 2">2</a>
+            <a href="page3.html" alt="Link to page 3">3</a>
+            <a href="page4.html" alt="Link to page 4">4</a>
+            <a href="page5.html" alt="Link to page 5">5</a>
+            <a href="page6.html" alt="Link to page 6">6</a>
+            <a href="page7.html" alt="Link to page 7">7</a>
+        </nav>
+    </header>
+
+    <nav class="left_nav">
+        <a href="index.html" alt="Sidebar link to home page">Home</a>
+    </nav>
+
+    <nav class="right_nav">
+        <a href="page2.html" alt="Sidebar link to page 2">2</a>
+    </nav>
+
+    <div class="main">
+            <p style="background-color:pink;">
+                1. Here's a fancy paragraph decorated with inline CSS
             </p>
-        </div>
-    </body>
+            <pre>2  .  H  e  r  e  '  s    a    p  r  e    f  o  r  m  a  t  t  e  d    o  n  e</pre>
+            <p id="special">
+                3. This one is formatted using #special
+            </p>
+            <p>
+                4. This paragraph is the first one after something with id="special", so it's formatted using #special +
+            </p>
+            <p>
+                5. This one has different padding, and is selected using the pseudo class .content::nth-child(5) and also
+                uses the ::first-line pseudo element
+            </p>
+            <div class="borders">
+                <p>
+                    6. This one has weird borders
+                </p>
+            </div>
+            <table>
+                <tr>
+                    <th>HW#</th>
+                    <th>Date assigned</th>
+                    <th>Tentative date due</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>7/6</td>
+                    <td>7/8</td>
+                </tr>
+                <tr>
+                    <td>7/8</td>
+                    <td>7/13</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>7/10</td>
+                    <td>7/22</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>7/15</td>
+                    <td>7/27</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>7/22</td>
+                    <td>8/3</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>7/27</td>
+                    <td>8/3</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8/3</td>
+                    <td>8/12</td>
+                </tr>
+            </table>
+            <p>
+                7. This paragraph has one
+                <span class="borders">
+                    6. This one has weird borders
+                </span>
+                copy of paragraph 6 inline, and one
+            <div class="borders">
+                6. This one has weird borders
+            </div>
+            block
+            </p>
+            <div>
+                <form>
+                    <label for="nothing">You can write something here:</label>
+                    <input type="text" id="something" name="blah" placeholder="Something"><br>
+                    <label for="radio">You can't write anything here:</label><br>
+                    <input type="radio" id="anything1" name="radio_b" value="Nothing 1"><br>
+                    <input type="radio" id="anything2" name="radio_b" value="Nothing 2"><br>
+                </form>
+            </div>
+            <p>End. Here's a picture of a tiny kitten. Click on it to go back to the top</p>
+            <a href="#top" id="go_up">
+                <picture>
+                    <img src="pictures/cat.png" alt="Picture of a cat">
+                </picture>
+            </a>
+    </div>
+</body>
 </html>

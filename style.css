@@ -12,8 +12,11 @@ body {
 }
 
 .main {
+  background-color: rgb(245, 245, 245);
+  border-radius: 1em 1em 0em 0em;
   width: 50em;
   margin-top: 10vh;
+  padding: 1em;
 
   /*Just to show off the sidebars*/
   height: 120vh;

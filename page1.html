@@ -7,13 +7,16 @@
     Currently blank(ish) filler page 1
 -->
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Xuhao's Index Page</title>
+    <title>Page 1</title>
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/d03a72b98c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -23,109 +26,146 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style_page1.css">
+    <link rel="stylesheet" href="style.css">
     <!--Import the font "Open Sans" from Google font API-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 </head>
+
 <body>
-    <nav class="navbar nav-bar expand-lg navbar-dark">
-        <a href="index.html" alt="Sidebar link to home page">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm navbar-light navbar-fixed-top">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html" alt="Navigation link to home page">
+                <i class="fas fa-home"></i><span class="open-sans"> Home</span>
+            </a>
+            <a class="nav-item nav-link" href="page1.html" alt="Navigation link to page 1">
+                <span class="open-sans">1</span>
+            </a>
+            <a class="nav-item nav-link" href="page2.html" alt="Navigation link to page 2">
+                <span class="open-sans">2</span>
+            </a>
+        </div>
     </nav>
-
-    <nav class="right_nav">
-        <a href="page2.html" alt="Sidebar link to page 2">2</a>
-    </nav>
-
-    <div class="main">
-            <p style="background-color:pink;">
-                1. Here's a fancy paragraph decorated with inline CSS
-            </p>
-            <pre>2  .  H  e  r  e  '  s    a    p  r  e    f  o  r  m  a  t  t  e  d    o  n  e</pre>
-            <p id="special">
-                3. This one is formatted using #special
-            </p>
-            <p>
-                4. This paragraph is the first one after something with id="special", so it's formatted using #special +
-            </p>
-            <p>
-                5. This one has different padding, and is selected using the pseudo class .content::nth-child(5) and also
-                uses the ::first-line pseudo element
-            </p>
-            <div class="borders">
-                <p>
-                    6. This one has weird borders
+    <!--Sidebar left-->
+    <div class="row">
+        <nav class="left sidebar sidebar-light bg-white col-lg-1 d-none d-lg-flex">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light" href="index.html">
+                            <i class="fas fa-arrow-left fa-5x"></i>
+                        </a>
+                    </li>
+                    <ul>
+            </div>
+    </div>
+    <!--Sidebar right-->
+    <div class="row">
+        <nav class="right sidebar sidebar-light bg-white col-lg-1 d-none d-lg-flex">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light" href="page2.html">
+                            <i class="fas fa-arrow-right fa-5x"></i>
+                        </a>
+                    </li>
+                    <ul>
+            </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-1 col-lg-3">
+                <p style="background-color:pink;">
+                    1. Here's a fancy paragraph decorated with inline CSS
                 </p>
             </div>
-            <table>
-                <tr>
-                    <th>HW#</th>
-                    <th>Date assigned</th>
-                    <th>Tentative date due</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>7/6</td>
-                    <td>7/8</td>
-                </tr>
-                <tr>
-                    <td>7/8</td>
-                    <td>7/13</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>7/10</td>
-                    <td>7/22</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>7/15</td>
-                    <td>7/27</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>7/22</td>
-                    <td>8/3</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>7/27</td>
-                    <td>8/3</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>8/3</td>
-                    <td>8/12</td>
-                </tr>
-            </table>
-            <p>
-                7. This paragraph has one
-                <span class="borders">
-                    6. This one has weird borders
-                </span>
-                copy of paragraph 6 inline, and one
-            <div class="borders">
-                6. This one has weird borders
+            <div class="col-xs-6">
+                <pre>2  .  H  e  r  e  '  s    
+            a    p  r  e    
+            f  o  r  m  a  t  t  e  d
+                o  n  e</pre>
             </div>
-            block
-            </p>
-            <div>
-                <form>
-                    <label for="nothing">You can write something here:</label>
-                    <input type="text" id="something" name="blah" placeholder="Something"><br>
-                    <label for="radio">You can't write anything here:</label><br>
-                    <input type="radio" id="anything1" name="radio_b" value="Nothing 1"><br>
-                    <input type="radio" id="anything2" name="radio_b" value="Nothing 2"><br>
-                </form>
+            <div class="col-xs-1 col-lg-3">
+                <p id="special">
+                    3. This one is formatted using #special
+                </p>
             </div>
-            <p>End. Here's a picture of a tiny kitten. Click on it to go back to the top</p>
-            <a href="#top" id="go_up">
-                <picture>
-                    <img src="pictures/cat.png" alt="Picture of a cat">
-                </picture>
-            </a>
+            <div class="col-xs-1 col-lg-3">
+                <p>
+                    4. This paragraph is the first one after something with id="special", so it's formatted using
+                    #special +
+                </p>
+            </div>
+            <div class="col-xs-1 col-lg-3">
+                <p>
+                    5. This one has different padding, and is selected using the pseudo class .content::nth-child(5) and
+                    also
+                    uses the ::first-line pseudo element
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-md-3">
+                <table class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">HW#</th>
+                            <th scope="col">Date assigned</th>
+                            <th scope="col">Tentative date due</th>
+                        </tr>
+                    </thead>
+        
+                    <tr>
+                        <td scope="row">1</td>
+                        <td>7/6</td>
+                        <td>7/8</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td>7/8</td>
+                        <td>7/13</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">3</td>
+                        <td>7/10</td>
+                        <td>7/22</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">4</td>
+                        <td>7/15</td>
+                        <td>7/27</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">5</td>
+                        <td>7/22</td>
+                        <td>7/27</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">6</td>
+                        <td>7/27</td>
+                        <td>8/3</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">7</td>
+                        <td>8/3</td>
+                        <td>8/12</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-md-3">
+        <p>End. Here's a picture of a tiny kitten. Click on it to go back to the top</p>
+        <a href="#top" id="go_up">
+            <picture>
+                <img src="pictures/cat.png" alt="Picture of a cat">
+            </picture>
+        </a>
+        </div>
+        </div>
     </div>
+    
 </body>
+
 </html>

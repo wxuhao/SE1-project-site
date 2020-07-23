@@ -1,0 +1,39 @@
+.content {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#special {
+    font-style: oblique !important;
+    background-color: hsl(194, 93%, 83%) !important;
+}
+
+#special + p {
+    font-variant: small-caps !important;
+}
+
+p:nth-child(5) {
+    font-size: xx-large !important;
+}
+
+p:nth-child(5)::first-line {
+    color: purple !important;
+    font-style: italic !important;
+}
+
+.borders {
+    width: 10em !important;
+    border-left: inset 1px green !important;
+    border-top: dotted 5px blue !important;
+    border-right: 10px solid red !important;
+    margin: 1em !important;
+}
+
+img {
+    height: 50% !important;
+}
+
+/* Make the link to the top of the page only work when clicking on the picture*/
+#go_up {
+    width:  0px !important;
+}

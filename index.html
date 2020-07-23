@@ -15,7 +15,6 @@
     <!-- stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/d03a72b98c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -27,34 +26,58 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="style.css">
     <!--Import the font "Open Sans" from Google font API-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-    </head>
-    
-    <body>
-        <nav class="navbar expand-lg navbar-light navbar-fixed-top">
-            <ul class="navbar-nav">
-                <a class="nav-link" href="index.html" alt="Sidebar link to home page"><i class="fas fa-home fa-2x">Home</i></a>
-            </ul>
-        </nav>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm navbar-light navbar-fixed-top">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html" alt="Navigation link to home page">
+                <i class="fas fa-home"></i><span class="open-sans"> Home</span>
+            </a>
+            <a class="nav-item nav-link" href="page1.html" alt="Navigation link to page 1">
+                <span class="open-sans">1</span>
+            </a>
+            <a class="nav-item nav-link" href="page2.html" alt="Navigation link to page 2">
+                <span class="open-sans">2</span>
+            </a>
+        </div>
+    </nav>
+    <!--Sidebar left-->
     <div class="row">
-        <nav class="sidebar sidebar-light bg-white col-lg-1 d-none d-lg-flex">
+        <nav class="left sidebar sidebar-light bg-white column col-lg-1 d-none d-lg-flex">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light" href="#1">
+                        <a class="nav-link btn btn-light" href="index.html">
                             <i class="fas fa-arrow-left fa-5x"></i>
                         </a>
                     </li>
-                <ul>
+                    <ul>
             </div>
-        </div>
+    </div>
+    <!--Sidebar right-->
+    <div class="row">
+        <nav class="right sidebar sidebar-light bg-white col-lg-1 d-none d-lg-flex">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light" href="page1.html">
+                            <i class="fas fa-arrow-right fa-5x"></i>
+                        </a>
+                    </li>
+                    <ul>
+            </div>
     </div>
     <div class="container col-6">
         Hi, I'm Xuhao<br>
         This is my site for GUI 1<br>
         Click on the top or the sides to view my assignments
+        
     </div>
 </body>
+
 </html>

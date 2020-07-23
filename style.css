@@ -1,13 +1,21 @@
-* {
-    font-family: "Open Sans";
+span.open-sans {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 1em;
 }
 .sidebar {
+    position: fixed;
+    align-items: center;
+    height: 100%;
     top: 0;
     bottom: 0;
+}
+.left.sidebar {
     left: 0;
-    position: fixed;
-    z-index: -1;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+ }
+.right.sidebar {
+    right: 0;
+}
+/*On top of sidebar*/
+.navbar {
+    z-index: 100;
 }

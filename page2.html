@@ -1,48 +1,80 @@
 <!DOCTYPE html>
 <!--
-    File: "/usr/cs/undergrad/2020/xwang3/public_html/page1.html"
+    File: "/usr/cs/undergrad/2020/xwang3/public_html/index.html"
     91.61 GUI Programming I Assignment 1: Creating Your First Web Page
     Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
-    Created July 13, 2020
-    Currently blank(ish) filler page 2
+    Created July 10, 2020
+    Index for my personal page
 -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Xuhao's Index Page</title>
 
-        <!-- stylesheets -->
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="utf-8">
+    <title>Xuhao's Index Page</title>
 
-        <!--Import the font "Open Sans" from Google font API-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html" alt="Link to home page">Home</a>
-                <a href="page1.html" alt="Link to page 1" class="complete">1</a>
-                <a href="page2.html" alt="Link to page 2">2</a>
-                <a href="page3.html" alt="Link to page 3">3</a>
-                <a href="page4.html" alt="Link to page 4">4</a>
-                <a href="page5.html" alt="Link to page 5">5</a>
-                <a href="page6.html" alt="Link to page 6">6</a>
-                <a href="page7.html" alt="Link to page 7">7</a>
-            </nav>
-        </header>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/d03a72b98c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <!--Import the font "Open Sans" from Google font API-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+</head>
 
-        <nav class="left_nav">
-            <a href="page1.html" alt="Sidebar link to page 1">Home</a>
-        </nav>
-
-        <nav class="right_nav">
-            <a href="page3.html" alt="Sidebar link to page 3">3</a>
-        </nav>
-
-        <div class="main">
-            <p>
-                Filler for page 2
-            </p>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm navbar-light navbar-fixed-top">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html" alt="Navigation link to home page">
+                <i class="fas fa-home"></i><span class="open-sans"> Home</span>
+            </a>
+            <a class="nav-item nav-link" href="page1.html" alt="Navigation link to page 1">
+                <span class="open-sans">1</span>
+            </a>
+            <a class="nav-item nav-link" href="page2.html" alt="Navigation link to page 2">
+                <span class="open-sans">2</span>
+            </a>
         </div>
-    </body>
+    </nav>
+    <!--Sidebar left-->
+    <div class="row">
+        <nav class="left sidebar sidebar-light bg-white column col-lg-1 d-none d-lg-flex">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light" href="page1.html">
+                            <i class="fas fa-arrow-left fa-5x"></i>
+                        </a>
+                    </li>
+                    <ul>
+            </div>
+    </div>
+    <!--Sidebar right-->
+    <div class="row">
+        <nav class="right sidebar sidebar-light bg-white col-lg-1 d-none d-lg-flex">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light" href="page2.html">
+                            <i class="fas fa-arrow-right fa-5x"></i>
+                        </a>
+                    </li>
+                    <ul>
+            </div>
+    </div>
+    <div class="container col-6">
+        Filler for page 2
+    </div>
+</body>
+
 </html>

@@ -21,6 +21,7 @@ table {
 thead th {
     position: sticky;
     top: 0;
+    /* Remove some gaps */
     border: 0!important;
 }
 thead th:nth-child(even) {
@@ -35,6 +36,7 @@ tr > th {
 }
 .tableCol {
     max-height:50vh;
+    /* Remove some gaps */
     padding: 0;
 }
 /*From https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp*/

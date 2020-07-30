@@ -1,3 +1,0 @@
-http://cs.uml.edu/~xwang3/
-https://wxuhao.github.io/index.html
-Changed everything to bootstrap, including previous assignment

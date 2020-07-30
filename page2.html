@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <!--
-    File: "/usr/cs/undergrad/2020/xwang3/public_html/index.html"
-    91.61 GUI Programming I Assignment 1: Creating Your First Web Page
+    File: "https://wxuhao.github.io/page2.html"
+    91.61 GUI Programming I Assignment 5: Javascript
     Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
     Created July 10, 2020
+    Last Edited July 29, 2020
     Index for my personal page
 -->
 <html lang="en">
@@ -11,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <title>Xuhao's Index Page</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -33,7 +34,7 @@
 
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-sm navbar-light navbar-fixed-top">
+    <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="index.html" alt="Navigation link to home page">
                 <i class="fas fa-home"></i><span class="open-sans"> Home</span>
@@ -48,7 +49,7 @@
     </nav>
     <!--Sidebar left-->
     <div class="row">
-        <nav class="left sidebar sidebar-light bg-white column col-lg-1 d-none d-lg-flex">
+        <nav class="left sidebar sidebar-light column col-lg-1 d-none d-lg-flex">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -61,20 +62,61 @@
     </div>
     <!--Sidebar right-->
     <div class="row">
-        <nav class="right sidebar sidebar-light bg-white col-lg-1 d-none d-lg-flex">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-light" href="page2.html">
-                            <i class="fas fa-arrow-right fa-5x"></i>
-                        </a>
-                    </li>
-                    <ul>
-            </div>
+        <nav class="right sidebar col-lg-1 d-none d-lg-flex">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-light" href="page2.html">
+                        <i class="fas fa-arrow-right fa-5x"></i>
+                    </a>
+                </li>
+                <ul>
+        </nav>
     </div>
-    <div class="container col-6">
-        Filler for page 2
+    <div class="container content">
+        <div class="row justify-content-center alert alert-primary">
+            Enter integers in the range (-50, 50) for the top and left side of the multiplication table.
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form>
+                    <div class="form-group">
+                        <label for="top1">Top starting number</label>
+                        <input type="number" class="form-control" id="top1" placeholder="Enter number"
+                         data-toggle="popover" data-content="e" data-placement="auto" min="-50" max="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="top2">Top ending number</label>
+                        <input type="number" class="form-control" id="top2" aria-describedby="numberHelp1" placeholder="Enter number"
+                         data-toggle="popover" data-content="" data-placement="auto" min="-50" max="50">
+                        <small id="numberHelp1" class="form-text text-muted">Must be larger than the Top starting number</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="left1">Left starting number</label>
+                        <input type="number" class="form-control" id="left1" placeholder="Enter number"
+                         data-toggle="popover" data-content="" data-placement="auto" min="-50" max="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="left2">Left ending number</label>
+                        <input type="number" class="form-control" id="left2" aria-describedby="numberHelp2" placeholder="Enter number"
+                         data-toggle="popover" data-content="" data-placement="auto" min="-50" max="50">
+                        <small id="numberHelp2" class="form-text text-muted">Must be larger than the Left starting number</small>
+                    </div>
+                    <button type="submit" onClick="go(); return false;" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container content my-2">
+        <div class="row justify-content-center">
+            <div id="tDiv" class="col-lg-9 tableCol">
+                <table id="multTable" class="table table-striped table-responsive-lg table-bordered table-light">
+                    <thead id='tHead'class="thead-light"></thead>
+                    <tbody id='tBody'class="thead-light"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
+<script src="js/mult_table.js"></script>
 
 </html>

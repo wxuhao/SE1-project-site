@@ -3,11 +3,10 @@ span.open-sans {
     font-size: 1em;
 }
 .sidebar {
+    background-color: transparent;
     position: fixed;
     align-items: center;
     height: 100%;
-    top: 0;
-    bottom: 0;
 }
 .left.sidebar {
     left: 0;
@@ -15,7 +14,38 @@ span.open-sans {
 .right.sidebar {
     right: 0;
 }
-/*On top of sidebar*/
-.navbar {
-    z-index: 100;
+table {
+    min-width: 2ch;
+    max-height: 75vh;
+}
+thead th {
+    position: sticky;
+    top: 0;
+    border: 0!important;
+}
+thead th:nth-child(even) {
+    background-color: #cce5ff !important;
+}
+td:nth-child(even) {
+    background-color: #cce5ff;
+}
+tr > th {
+    left: 0;
+    position: sticky;
+}
+.tableCol {
+    max-height:50vh;
+    padding: 0;
+}
+/*From https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

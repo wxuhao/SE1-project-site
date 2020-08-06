@@ -6,52 +6,6 @@ Created July 29, 2020
 Js for multiplication table
 */
 
-// Called on button press
-function go() {
-    top1 = verify('top1');
-    top2 = verify('top2');
-    left1 = verify('left1');
-    left2 = verify('left2');
-    // Var used so that all error messages can be displayed before returning
-    var valid = true;
-    if (top2 < top1) {
-        document.getElementById('top2').setAttribute('data-content', 'Ending must be > starting');
-        $('#top2').popover('show');
-        valid = false;
-    }
-    if (left2 < left1) {
-        document.getElementById('left2').setAttribute('data-content', 'Ending must be > starting');
-        $('#left2').popover('show');
-        valid = false;
-    }
-    // Check if any are blank. Can't return before here in order to show errors
-    if ([top1, top2, left1, left2].some((num) => num == null)) {
-        return;
-    }
-    if (valid) {
-        populateTable(top1, top2, left1, left2);
-    }
-}
-// Verify input and display error messages
-function verify(input) {
-    value = document.getElementById(input).value;
-    if (value > 50) {
-        document.getElementById(input).setAttribute('data-content', 'Must be < 50');
-        $('#' + input).popover('show');
-    }
-    else if (value < -50) {
-        document.getElementById(input).setAttribute('data-content', 'Must be > -50');
-        $('#' + input).popover('show');
-    }
-    else if (isNaN(value) || value == '') {
-        document.getElementById(input).setAttribute('data-content', 'Must insert a number');
-        $('#' + input).popover('show');
-    }
-    else {
-        $('#' + input).popover('hide');
-        return parseInt(value);
-    }
-}
 // Create the table
 function populateTable(topStart, topEnd, leftStart, leftEnd) {
     // Erase old table
@@ -93,5 +47,62 @@ function populateTable(topStart, topEnd, leftStart, leftEnd) {
         }
     }
 }
+// jQuery Validation version:
+jQuery.validator.setDefaults({
+    success: "valid"
+});
+$("#form").validate({
+    rules: {
+        top1: {
+            required: true,
+            rangelength: [-50, 50]
+        },
+        top2: {
+            required: true,
+            rangelength: [-50, 50]
+        },
+        left1: {
+            required: true,
+            rangelength: [-50, 50]
+        },
+        left2: {
+            required: true,
+            rangelength: [-50, 50]
+        }
+    },
+    // Populate table on success
+    submitHandler: function (form) {
+        var top1 = document.getElementById('top1').value;
+        var top2 = document.getElementById('top2').value;
+        var left1 = document.getElementById('left1').value;
+        var left2 = document.getElementById('left2').value;
+        console.log(top1, top2, left1, left2);
+        populateTable(parseInt(top1), parseInt(top2), parseInt(left1), parseInt(left2));
+    }
+});
+// Validate that top end is larger than top beginning
+$.validator.addMethod("checkTop2", function (value, element) {
+    var top1 = document.getElementById('top1').value;
+    var top2 = document.getElementById('top2').value;
+    if (top2 < top1) {
+        console.log(num, top1);
+        return false;
+    }
+    else {
+        return true;
+    }
+}, 'Must be larger than the top starting number');
+// Validate that left end is larger than left beginning using checkLeft2
+$.validator.addMethod("checkLeft2", function (value, element) {
+    var left1 = document.getElementById('left1').value;
+    var left2 = document.getElementById('left2').value;
+    if (left2 < left1) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}, 'Must be larger than the left starting number');
+
 // Default table
-populateTable(1, 5, 1, 5);
+populateTable(5, 10, 1, 5);

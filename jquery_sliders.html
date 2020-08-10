@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+    File: "https://wxuhao.github.io/assignment.html"
+    91.61 GUI Programming I Assignment 6: jQuery verification
+    Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
+    Created July 10, 2020
+    Last Edited Aug 5, 2020
+    jQuery version
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Xuhao's Index Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/d03a72b98c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+        <script src = "https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"></script>
+    <!--Import the font "Open Sans" from Google font API-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html" alt="Navigation link to home page">
+                <i class="fas fa-home"></i><span class="open-sans"> Home</span>
+            </a>
+            <a class="nav-item nav-link" href="page1.html" alt="Navigation link to page 1">
+                <span class="open-sans">1</span>
+            </a>
+            <a class="nav-item nav-link" href="page2.html" alt="Navigation link to page 2">
+                <span class="open-sans">2</span>
+            </a>
+        </div>
+    </nav>
+    <!--Sidebar left-->
+    <div class="row">
+        <nav class="left sidebar sidebar-light column col-lg-1 d-none d-lg-flex">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light" href="page1.html">
+                            <i class="fas fa-arrow-left fa-5x"></i>
+                        </a>
+                    </li>
+                    <ul>
+            </div>
+    </div>
+    <!--Sidebar right-->
+    <div class="row">
+        <nav class="right sidebar col-lg-1 d-none d-lg-flex">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-light" href="page2.html">
+                        <i class="fas fa-arrow-right fa-5x"></i>
+                    </a>
+                </li>
+                <ul>
+        </nav>
+    </div>
+    <div class="container content">
+        <div class="row justify-content-center alert alert-primary">
+            Enter numbers for the top and left side of the multiplication table.
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form id='form'>
+                    <div class="form-group">
+                        <label for="top1">Top starting number</label>
+                        <div id="top1slider"></div>
+                        <input type="number" id="top1" name="top1" placeholder="Enter number" data-content="" data-placement="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="top2">Top ending number</label>
+                        <div id="top2slider"></div>
+                        <input type="number" class="checkTop2" id="top2" name="top2" aria-describedby="numberHelp1"
+                            placeholder="Enter number" data-content="" data-placement="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="left1">Left starting number</label>
+                        <div id="left1slider"></div>
+                        <input type="number" id="left1" name="left1" placeholder="Enter number" data-content="" data-placement="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="left2">Left ending number</label>
+                        <div id="left2slider"></div>
+                        <input type="number" class="checkLeft2" id="left2" name="left2" aria-describedby="numberHelp2"
+                            placeholder="Enter number" data-content="" data-placement="auto">
+                    </div>
+                    <button class="submit" onClick="" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container content my-2">
+        <div class="row justify-content-center">
+            <div id="tDiv" class="col-lg-9 tableCol">
+                <table id="multTable" class="table table-striped table-responsive-lg table-bordered table-light">
+                    <thead id='tHead' class="thead-light"></thead>
+                    <tbody id='tBody' class="thead-light"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery_sliders.js"></script>
+
+</html>

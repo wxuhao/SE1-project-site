@@ -1,3 +1,11 @@
+    /*
+    File: "https://wxuhao.github.io/style_page1.css"
+    91.61 GUI Programming I Assignment
+    Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
+    Created July 10, 2020
+    Last Edited July 22, 2020
+    */
+    
 .content {
     display: flex !important;
     flex-direction: column !important;

@@ -1,48 +1,69 @@
+/*
+    File: "https://wxuhao.github.io/style.css"
+    91.61 GUI Programming I Assignment 7: jQuery sliders
+    Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
+    Created July 10, 2020
+    Last Edited Aug 10, 2020
+    */
+
 span.open-sans {
-    font-family: "Open Sans", sans-serif !important;
-    font-size: 1em;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1em;
 }
+
 .sidebar {
-    background-color: transparent;
-    position: fixed;
-    align-items: center;
-    height: 100%;
+  background-color: transparent;
+  position: fixed;
+  align-items: center;
+  height: 100%;
 }
+
 .left.sidebar {
-    left: 0;
- }
-.right.sidebar {
-    right: 0;
+  left: 0;
 }
+
+.right.sidebar {
+  right: 0;
+}
+
 table {
-    min-width: 2ch;
-    max-height: 75vh;
+  min-width: 2ch;
+  max-height: 75vh;
+}
+
+thead {
+    font-weight: bold;
 }
 thead th {
-    position: sticky;
-    top: 0;
-    /* Remove some gaps */
-    border: 0!important;
+  position: sticky;
+  top: 0;
+  /* Remove some gaps */
+  border: 0 !important;
 }
+
 thead th:nth-child(even) {
-    background-color: #cce5ff !important;
+  background-color: #cce5ff !important;
 }
+
 td:nth-child(even) {
-    background-color: #cce5ff;
+  background-color: #cce5ff;
 }
+
 tr > th {
-    left: 0;
-    position: sticky;
+  left: 0;
+  position: sticky;
 }
+
 .tableCol {
-    max-height:50vh;
-    /* Remove some gaps */
-    padding: 0;
+  max-height: 50vh;
+  /* Remove some gaps */
+  padding: 0;
 }
 
 .ui-slider {
-    margin: 0.3em;
+  margin: 0.3em;
 }
+
 /*From https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp*/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -52,6 +73,15 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
+}
+
+label.error {
+  font-weight: bold;
+  margin: 0.2em 1em;
+}
+
+input {
+    width: 8em;
 }

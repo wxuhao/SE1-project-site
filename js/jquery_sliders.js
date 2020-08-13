@@ -10,13 +10,25 @@ Assignment 7
 tableNum = 0;
 // Create the table
 function populateTable(topStart, topEnd, leftStart, leftEnd) {
-    var div = document.createElement('div');
+    // Create parent divs
+    var outerDiv = document.createElement('div');
+    document.body.appendChild(outerDiv);
+    outerDiv.className += 'container content my-2';
+    // Create inner divs
+    outerDiv.innerHTML = `
+        <div class="row justify-content-center">
+            <div id="tDiv" class="col-lg-9 tableCol">
+            </div>
+        </div>
+    `
+    console.log(outerDiv);
+    var div = document.getElementById('tDiv');
     div.id = tableNum;
     var table = document.createElement('table');
     table.className +="table table-striped table-responsive-lg table-bordered table-light"
     div.appendChild(table);
     // Add table div to tab element
-    $('#tabs').append(div);
+    $('#tabs').append(outerDiv);
     var head = table.createTHead();
     var body = document.createElement('tbody');
     table.appendChild(body);

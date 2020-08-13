@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!--
-    File: "https://wxuhao.github.io/index.html"
-    91.61 GUI Programming I Assignment 1: Creating Your First Web Page
+    File: "https://wxuhao.github.io/scrabble.html"
+    91.61 GUI Programming I Assignment 8: Scrabble
     Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
-    Created July 10, 2020
-    Index
+    Created Aug 12, 2020
+    Scrabble
+    Images taken from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
 -->
 <html lang="en">
 
@@ -26,7 +27,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scrabble.css">
     <!--Import the font "Open Sans" from Google font API-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 </head>
@@ -72,12 +76,20 @@
                     <ul>
             </div>
     </div>
-    <div class="container col-6">
-        Hi, I'm Xuhao<br>
-        This is my site for GUI 1<br>
-        Click on the top or the sides to view my assignments
-
+    <div class="container col-6" id="board">
+        <div><img src="images/tiles/A.jpg" alt="A" class="tile" ></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid rack"></div>
+        <div class="grid rack"></div>
+        <div class="grid rack"></div>
+        <div class="grid rack"></div>
+        <div class="grid rack"></div>
     </div>
+    <script src="js/scrabble.js"></script>
 </body>
 
 </html>

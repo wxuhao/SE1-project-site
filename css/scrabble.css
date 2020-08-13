@@ -1,0 +1,24 @@
+.tile {
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    z-index: 100;
+}
+
+.grid {
+    height: 5em;
+    width: 5em;
+    border: red 1px solid;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#board {
+    border: red 1px solid;
+    padding: 0;
+}
+
+.rack {
+
+}

@@ -1,24 +1,43 @@
 .tile {
-    height: 5em;
-    width: 5em;
-    position: absolute;
-    z-index: 100;
+    height: 4em;
+    width: 4em;
 }
 
-.grid {
-    height: 5em;
-    width: 5em;
+#board .grid{
+    height: 4em;
+    width: 4em;
     border: red 1px solid;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+    margin: 3px;
+    background-color: bisque;
 }
 
-#board {
+#area {
     border: red 1px solid;
-    padding: 0;
+    background-color: ghostwhite;
 }
 
-.rack {
+#rack .grid{
+    height: 4em;
+    width: 4em;
+    border: red 1px solid;
+    margin: auto 3px 0 3px;
+    background-color: bisque;
+}
 
+body {
+    height: 100vh;
+}
+
+#board .double-word {
+    background-color: lightpink;
+}
+
+.double-word div {
+    font-size: small;
+    text-align: center;
+    font-weight: bold;
+}
+
+#rack {
+    margin-top: auto;
 }

@@ -27,11 +27,11 @@
 #area {
   border: lightgray 1px solid;
   border-radius: 5px;
-  /* Nothing on the board should be selectable */
+  /* Nothing on the board should be selectable 
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: none;*/
 }
 
 #rack .grid {

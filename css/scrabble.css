@@ -55,8 +55,6 @@ body {
   font-weight: bold;
 }
 
-#rack {
-}
 /* Fade in game over */
 #game-over.fade {
     opacity: 0;
@@ -65,13 +63,13 @@ body {
 #game-over.fade.in {
     opacity: 1;
 }
+
 /* Insert and fade touchscreen banner if touchscreen*/
 #touchscreen.fade {
     opacity: 0;
     display: none;
 }
-
-#game-over.fade.in {
+#touchscreen.fade.in {
     opacity: 1;
     display: block;
 }

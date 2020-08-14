@@ -136,7 +136,7 @@ function clearBoard() {
 // banishTiles: Remove tiles from the game if true
 function replaceTiles(banishTiles) {
     resetArea(banishTiles);
-    if (tryGameOver()) { return;}
+    if (tryGameOver()) { return; }
     $('#rack .grid').each(
         function () {
             // Stop immediately if game is over
@@ -252,7 +252,9 @@ function touchScreenBanner() {
             );
         }
     }
-    $('#touchscreen').addClass('in');
+    if (hasTouchScreen) {
+        $('#touchscreen').addClass('in');
+    }
 }
 // On load
 $(function () {

@@ -1,43 +1,67 @@
+/*
+    File: "https://wxuhao.github.io/css/scrabble.css"
+    91.61 GUI Programming I Assignment 8: Scrabble
+    Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
+    Created Aug 12, 2020
+    Scrabble
+    Images received from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
+    */
+
 .tile {
-    height: 4em;
-    width: 4em;
+  height: 4em;
+  width: 4em;
 }
 
-#board .grid{
-    height: 4em;
-    width: 4em;
-    border: red 1px solid;
-    margin: 3px;
-    background-color: bisque;
+#board .grid {
+  height: 4em;
+  width: 4em;
+  margin: 3px;
+  background-color: rgb(180, 243, 180);
+  border-radius: 3px;
+}
+
+#board .grid.greyed-out {
+  background-color: rgb(230, 230, 230);
 }
 
 #area {
-    border: red 1px solid;
-    background-color: ghostwhite;
+  border: lightgray 1px solid;
+  border-radius: 5px;
+  /* Nothing on the board should be selectable */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#rack .grid{
-    height: 4em;
-    width: 4em;
-    border: red 1px solid;
-    margin: auto 3px 0 3px;
-    background-color: bisque;
+#rack .grid {
+  height: 4em;
+  width: 4em;
+  margin: auto 3px 0 3px;
+  background-color: bisque;
 }
 
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 #board .double-word {
-    background-color: lightpink;
+  background-color: rgb(250, 208, 214);
 }
 
 .double-word div {
-    font-size: small;
-    text-align: center;
-    font-weight: bold;
+  font-size: small;
+  text-align: center;
+  font-weight: bold;
 }
 
 #rack {
-    margin-top: auto;
+}
+/* Fade in game over */
+#game-over.fade {
+    opacity: 0;
+}
+
+#game-over.fade.in {
+    opacity: 1;
 }

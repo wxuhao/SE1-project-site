@@ -5,7 +5,7 @@
     Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
     Created Aug 12, 2020
     Scrabble
-    Images taken from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
+    Images received from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
 -->
 <html lang="en">
 
@@ -51,9 +51,12 @@
             </a>
         </div>
     </nav>
-    <div class="container h-75" id="area">
-        <div class="d-flex align-items-start flex-column h-100 ">
-            <div class="row mb-auto mx-auto" id="board">
+    <div id="game-over" class="alert alert-primary fade" role="alert">
+        You've used all 100 tiles in the bag! Press restart to get a new bag and try for a new high score!
+    </div>
+    <div class="col-sm col-md-9 m-auto" id="area">
+        <div class="d-flex align-items-center flex-column h-100">
+            <div class="row p-2 mt-4 mx-auto border border-success rounded" id="board">
                 <!-- b are Board Tiles-->
                 <div id="b0" class="grid snap"></div>
                 <div id="b1" class="grid double-word snap">
@@ -68,7 +71,7 @@
                 <div id="b6" class="grid snap"></div>
             </div>
 
-            <div class="row mt-auto mx-auto" id="rack">
+            <div class="row p-2 mt-3 mx-auto border border-warning rounded" id="rack">
                 <!-- r are Rack Tiles-->
                 <div id="r0" class="grid"></div>
                 <div id="r1" class="grid"></div>
@@ -78,14 +81,16 @@
                 <div id="r5" class="grid"></div>
                 <div id="r6" class="grid"></div>
             </div>
-            <div class="row"></div>
-            <div class='p-3'>Score:<div id="score"></div>
-            </div>
+            <div class='row p-3'>Score:&nbsp;<span id="score"></span></div>
+            <div class='row p-3'>High Score:&nbsp;<span id="high_score"></span></div>
+            <div class='row p-3'>Word:&nbsp;<span id="word"></span></div>
+            
             <div class="row p-3 justify-content-around">
-                <button class="btn btn-outline-primary m-3" onClick="submit();">Submit Word</button>
-                <button class="btn btn-outline-primary m-3" onClick="newTiles();">New tiles</button>
-                <button class="btn btn-outline-primary m-3" onClick="restart();">Restart</button>
-                <button class="btn btn-outline-primary m-3" onClick="clear();">Clear Board</button>
+                <button class="btn btn-outline-primary m-3" onClick="submitWord();">Submit Word</button>
+                <!-- Regrab tiles from the bag -->
+                <button class="btn btn-outline-primary m-3" onClick="replaceTiles(banishTiles = false);">New tiles</button>
+                <button class="btn btn-outline-primary m-3" onClick="restartGame();">Restart</button>
+                <button class="btn btn-outline-primary m-3" onClick="clearBoard();">Clear Board</button>
             </div>
         </div>
     </div>

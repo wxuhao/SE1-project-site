@@ -68,10 +68,10 @@ body {
 /* Insert and fade touchscreen banner if touchscreen*/
 #touchscreen.fade {
     opacity: 0;
-    display: 0;
+    display: none;
 }
 
 #game-over.fade.in {
     opacity: 1;
-    display: 1;
+    display: block;
 }

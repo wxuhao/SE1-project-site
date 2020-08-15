@@ -137,7 +137,6 @@ function updateScore() {
         var numDoubleWordTiles = 0;
         // Push the value of each tile on the board to values
         $(filledSlots).each(function () {
-            console.log($(this));
             if ($(this).hasClass('slot') ||
                 $(this).hasClass('slot')) {
                 numDoubleWordTiles++;

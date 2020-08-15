@@ -12,7 +12,7 @@
   width: 4em;
 }
 
-#board .slot {
+#board .grid {
   height: 4em;
   width: 4em;
   margin: 3px;
@@ -20,7 +20,7 @@
   border-radius: 3px;
 }
 
-#board .slot.greyed-out {
+#board .grid.greyed-out {
   background-color: rgb(230, 230, 230);
 }
 
@@ -34,7 +34,7 @@
   user-select: none;
 }
 
-#hand .slot {
+#rack .grid {
   height: 4em;
   width: 4em;
   margin: auto 3px 0 3px;
@@ -45,15 +45,14 @@ body {
   height: 100vh;
 }
 
-#board .double-word div {
+#board .double-word {
+  background-color: rgb(250, 208, 214);
+}
+
+.double-word div {
   font-size: small;
   text-align: center;
   font-weight: bold;
-  height: 100%;
-}
-
-#board .double-word {
-  background-color: rgb(250, 208, 214);
 }
 
 /* Fade in game over */

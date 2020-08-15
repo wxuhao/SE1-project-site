@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+    File: "https://wxuhao.github.io/scrabble.html"
+    91.61 GUI Programming I Assignment 8: Scrabble
+    Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
+    Created Aug 12, 2020
+    Scrabble
+    Images received from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Scrabble</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scrabble2.css">
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/d03a72b98c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/scrabble2.js"></script>
+    <!--Import the font "Open Sans" from Google font API-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html">
+                <i class="fas fa-home"></i><span class="open-sans"> Home</span>
+            </a>
+            <a class="nav-item nav-link" href="page1.html">
+                <span class="open-sans">1</span>
+            </a>
+            <a class="nav-item nav-link" href="page2.html">
+                <span class="open-sans">2</span>
+            </a>
+        </div>
+    </nav>
+    <div id="touchscreen" class="alert alert-warning fade" role="alert">
+        Sorry! This game doesn't work on touchscreen devices!
+    </div>
+    <div id="game-over" class="alert alert-primary fade" role="alert">
+        You've used all 100 tiles in the bag! Press restart to get a new bag and try for a new high score!
+    </div>
+    <div class="col-sm col-md-9 m-auto" id="area">
+        <div class="d-flex align-items-center flex-column h-100">
+            <div class="row p-2 mt-4 mx-auto border border-success rounded flex-nowrap" id="board">
+                <!-- b are board slots-->
+                <div id="board-slot-0" class="slot snap"></div>
+                <div id="board-slot-1" class="slot double-word snap">
+                    <div>DOUBLE! WORD! SCORE!</div>
+                </div>
+                <div id="board-slot-2" class="slot snap"></div>
+                <div id="board-slot-3" class="slot snap"></div>
+                <div id="board-slot-4" class="slot snap"></div>
+                <div id="board-slot-5" class="slot double-word snap">
+                    <div>DOUBLE! WORD! SCORE!</div>
+                </div>
+                <div id="board-slot-6" class="slot snap"></div>
+            </div>
+
+            <div class="row p-2 mt-3 mx-auto border border-warning rounded flex-nowrap" id="hand">
+                <!-- r are hand slots-->
+                <div id="hand-slot-0" class="slot"></div>
+                <div id="hand-slot-1" class="slot"></div>
+                <div id="hand-slot-2" class="slot"></div>
+                <div id="hand-slot-3" class="slot"></div>
+                <div id="hand-slot-4" class="slot"></div>
+                <div id="hand-slot-5" class="slot"></div>
+                <div id="hand-slot-6" class="slot"></div>
+            </div>
+            <div class='row p-3'>Score:&nbsp;<span id="score"></span></div>
+            <div class='row p-3'>High Score:&nbsp;<span id="high_score"></span></div>
+            <div class='row p-3'>Word:&nbsp;<span id="word"></span></div>
+
+            <div class="row p-3 justify-content-around">
+                <button class="btn btn-outline-primary m-3" onClick="submitWord();">Submit Word</button>
+                <!-- Regrab tiles from the bag -->
+                <button class="btn btn-outline-primary m-3" onClick="getNewHand();">New
+                    tiles</button>
+                <button class="btn btn-outline-primary m-3" onClick="restart();">Restart</button>
+                <button class="btn btn-outline-primary m-3" onClick="returnToHand();">Clear Board</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

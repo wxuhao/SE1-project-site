@@ -1,0 +1,76 @@
+/*
+    File: "https://wxuhao.github.io/css/scrabble.css"
+    91.61 GUI Programming I Assignment 8: Scrabble
+    Xuhao Wang, UMass Lowell Student, xuhao_wang@student.uml.edu
+    Created Aug 12, 2020
+    Scrabble
+    Images received from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
+    */
+
+.tile {
+  height: 4em;
+  width: 4em;
+}
+
+#board .slot {
+  height: 4em;
+  width: 4em;
+  margin: 3px;
+  background-color: rgb(180, 243, 180);
+  border-radius: 3px;
+}
+
+#board .slot.greyed-out {
+  background-color: rgb(230, 230, 230);
+}
+
+#area {
+  border: lightgray 1px solid;
+  border-radius: 5px;
+  /* Nothing on the board should be selectable */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#hand .slot {
+  height: 4em;
+  width: 4em;
+  margin: auto 3px 0 3px;
+  background-color: bisque;
+}
+
+body {
+  height: 100vh;
+}
+
+#board .double-word div {
+  font-size: small;
+  text-align: center;
+  font-weight: bold;
+  height: 100%;
+}
+
+#board .double-word {
+  background-color: rgb(250, 208, 214);
+}
+
+/* Fade in game over */
+#game-over.fade {
+    opacity: 0;
+}
+
+#game-over.fade.in {
+    opacity: 1;
+}
+
+/* Insert and fade touchscreen banner if touchscreen*/
+#touchscreen.fade {
+    opacity: 0;
+    display: none;
+}
+#touchscreen.fade.in {
+    opacity: 1;
+    display: block;
+}

@@ -10,7 +10,7 @@
 var Letters = {
     letter: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
     // Number left in the bag
-    num: [9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2],
+    num: [9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2, 1],
     value: [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
 }
 
@@ -57,16 +57,23 @@ function randLetter() {
     var rand = 0;
     // Loop through Letters.num, subtracting the number of letters left at each index to arrive at the random letter
     for (i = 0; i < Letters.num.length; i++) {
-        randTotal-= Letters.num[i];
-        if (randTotal<1) {
+        randTotal -= Letters.num[i];
+        if (randTotal<0) {
             rand = i;
             break;
         }
     }
-    var newLetter = remainingLetters[rand];
-    var newValue = remainingValues[rand];
+    // Needs to be fixed, currently fixes off 
+    //if (rand >= remainingLetters.length) {
+    //    rand = 0;
+    //}
+    console.log(i + '/' + remainingLetters.length, remainingValues.length);
+    var newLetter = Letters.letter[rand];
+    var newValue = Letters.value[rand];
+
+    var newIndex = Letters.num[rand];
     // Find index of the removed letter
-    var newIndex = Letters.letter.findIndex(aLetter => aLetter == newLetter);
+    //var newIndex = Letters.letter.findIndex(aLetter => aLetter == newLetter);
     return [newLetter, newValue, newIndex];
 }
 
@@ -135,13 +142,19 @@ function updateScore() {
     filledSlots = $('.slot[letter]');
     // If any slots have been filled
     if (filledSlots.length){
+        var numDoubleWordTiles = 0;
         // Push the value of each tile on the board to values
         $(filledSlots).each(function () {
+            console.log($(this));
+            if ($(this).hasClass('slot')||
+                $(this).hasClass('slot')) {
+                numDoubleWordTiles++;
+                }
             thisValue = parseInt($(this).attr('value'));
             values.push(thisValue);
         });
-        // Add up values
-        total = values.reduce(addValuesHelper);
+        // Add up values and multiply by double word tiles
+        total = values.reduce(addValuesHelper) * Math.max(Math.pow(2, numDoubleWordTiles), 1);
         score += parseInt(total);
         displayScore();
     }

@@ -8,17 +8,19 @@
     checkTouchScreen() taken from https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
     */
 var Letters = {
-    letter: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "W", "Y", "Z", "Blank"],
+    letter: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
     // Number left in the bag
-    num: [9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2, 1],
-    value: [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10, 0]
+    num: [9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2],
+    value: [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
 }
 
 // To reset the game after tiles have been used up
 const startingNum = [9, 2, 2, 4, 12, 2, 3, 2, 9, 1, 1, 4, 2, 6, 8, 2, 1, 6, 4, 6, 4, 2, 2, 1, 2, 1];
-var lettersLeft = 100;
 var score = 0;
 var highScore = 0;
+
+// Helps count how many tiles are left. Used in .reduce()
+const addValuesHelper = (totalWordScore, thisScore) => totalWordScore + thisScore;
 
 // letterArr = [letter, value, index]
 function makeTile() {
@@ -28,6 +30,8 @@ function makeTile() {
     letter = letterArr[0];
     value = letterArr[1];
     index = letterArr[2];
+    // Remove 1 of that letter
+    Letters.num[index]--;
     var img = new Image();
     img.src = 'images/tiles/' + letter + '.jpg';
     img.setAttribute('letter', letter);
@@ -46,15 +50,23 @@ function randLetter() {
     // Filter out letters which are 0 in num (used up)
     var remainingLetters = Letters.letter.filter((currentValue, index) => Letters.num[index] > 0);
     var remainingValues = Letters.value.filter((currentValue, index) => Letters.num[index] > 0);
-    // Get a random remaining letter
-    var rand = Math.floor(remainingLetters.length * Math.random());
+    // Total number of letters left
+    lettersLeft = Letters.num.reduce(addValuesHelper);
+    // Generate a random number in that range
+    var randTotal = Math.floor(lettersLeft * Math.random());
+    var rand = 0;
+    // Loop through Letters.num, subtracting the number of letters left at each index to arrive at the random letter
+    for (i = 0; i < Letters.num.length; i++) {
+        randTotal-= Letters.num[i];
+        if (randTotal<1) {
+            rand = i;
+            break;
+        }
+    }
     var newLetter = remainingLetters[rand];
     var newValue = remainingValues[rand];
     // Find index of the removed letter
     var newIndex = Letters.letter.findIndex(aLetter => aLetter == newLetter);
-    // Remove 1 from that remaining letter
-    Letters.num[newIndex]--;
-    lettersLeft--;
     return [newLetter, newValue, newIndex];
 }
 
@@ -62,7 +74,6 @@ function randLetter() {
 function returnLetter(letterIndex) {
     if (Letters.num[letterIndex] !== undefined) {
         Letters.num[letterIndex]++;
-        lettersLeft++;
     }
 }
 
@@ -93,41 +104,43 @@ function fillHand() {
 }
 
 function removeUsedFromHand() {
+    // .ui-draggable-disabled tiles in the hand have been placed on the board
     $('#hand .ui-draggable-disabled').each(function () {
         $(this).remove();
     });
+    // Enable dropping on the board
     resetBoard();
 }
 
 function getNewHand() {
+    // Return tiles on the board to the hand
     resetBoard();
+    // Return each letter to the bag
+    $('#hand img.tile').each(function () {
+        var letterIndex = $(this).attr('index');
+        returnLetter(letterIndex);
+    });
     $('#hand .slot').empty();
     fillHand();
 }
 
-function validateWord() {
-    word = [];
-    $('.slot[letter]').each(function() {
-        word.push($(this).attr('letter'))
-    });
-}
-
 function submitWord() {
-    validateWord();
     updateScore();
     removeUsedFromHand();
     fillHand();
 }
 
 function updateScore() {
-    const addValuesHelper = (totalWordScore, thisScore) => totalWordScore + thisScore;
     values = []
     filledSlots = $('.slot[letter]');
+    // If any slots have been filled
     if (filledSlots.length){
+        // Push the value of each tile on the board to values
         $(filledSlots).each(function () {
             thisValue = parseInt($(this).attr('value'));
             values.push(thisValue);
         });
+        // Add up values
         total = values.reduce(addValuesHelper);
         score += parseInt(total);
         displayScore();
@@ -147,11 +160,13 @@ function restart() {
     score = 0;
     displayScore()
     resetBag();
+    // Remove the game over banner
+    $('#game-over').removeClass('in');
 }
 
 function resetBag() {
+    // Get the original distribution of letters
     Letters.num = startingNum.slice();
-    lettersLeft = 100;
 }
 
 // Make tiles draggable and slot droppable
@@ -230,14 +245,14 @@ function addDragDrop() {
             $('.tile').draggable({ revert: false });
             ui.draggable.draggable("disable");
             $(this).droppable('disable');
-
         }
     });
 }
 
 
 function tryGameOver() {
-    if (lettersLeft === 0) {
+    lettersLeft = Letters.num.reduce(addValuesHelper);
+    if (lettersLeft === 1) {
         $('#game-over').addClass('in');
         return true;
     }

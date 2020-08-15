@@ -58,19 +58,19 @@ body {
 
 /* Fade in game over */
 #game-over.fade {
-    opacity: 0;
+  opacity: 0;
 }
 
 #game-over.fade.in {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Insert and fade touchscreen banner if touchscreen*/
 #touchscreen.fade {
-    opacity: 0;
-    display: none;
+  opacity: 0;
+  display: none;
 }
 #touchscreen.fade.in {
-    opacity: 1;
-    display: block;
+  opacity: 1;
+  display: block;
 }

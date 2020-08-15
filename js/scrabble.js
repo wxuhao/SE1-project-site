@@ -44,8 +44,8 @@ function makeTile() {
 // returns [letter, value, index] or false if no letters are left
 function randLetter() {
     // Stop immediately if game is over
-    if (tryGameOver()) { 
-        return; 
+    if (tryGameOver()) {
+        return;
     }
     // Filter out letters which are 0 in num (used up)
     var remainingLetters = Letters.letter.filter((currentValue, index) => Letters.num[index] > 0);
@@ -58,22 +58,14 @@ function randLetter() {
     // Loop through Letters.num, subtracting the number of letters left at each index to arrive at the random letter
     for (i = 0; i < Letters.num.length; i++) {
         randTotal -= Letters.num[i];
-        if (randTotal<0) {
+        if (randTotal < 0) {
             rand = i;
             break;
         }
     }
-    // Needs to be fixed, currently fixes off 
-    //if (rand >= remainingLetters.length) {
-    //    rand = 0;
-    //}
-    console.log(i + '/' + remainingLetters.length, remainingValues.length);
     var newLetter = Letters.letter[rand];
     var newValue = Letters.value[rand];
-
     var newIndex = Letters.num[rand];
-    // Find index of the removed letter
-    //var newIndex = Letters.letter.findIndex(aLetter => aLetter == newLetter);
     return [newLetter, newValue, newIndex];
 }
 
@@ -87,7 +79,7 @@ function returnLetter(letterIndex) {
 // Return pieces on the board to the hand
 function returnToHand() {
     // Remove the css that moves tiles
-    $('#hand .slot .tile').css({'left': 0,'top': 0});
+    $('#hand .slot .tile').css({ 'left': 0, 'top': 0 });
     // Re-enable dragging from hand
     $('#hand .slot .tile').draggable('enable');
     resetBoard();
@@ -104,7 +96,7 @@ function resetBoard() {
 
 function fillHand() {
     emptySlots = $('#hand .slot:empty');
-    $(emptySlots).each(function() {
+    $(emptySlots).each(function () {
         $(this).append(makeTile());
     });
     addDragDrop();
@@ -141,15 +133,15 @@ function updateScore() {
     values = []
     filledSlots = $('.slot[letter]');
     // If any slots have been filled
-    if (filledSlots.length){
+    if (filledSlots.length) {
         var numDoubleWordTiles = 0;
         // Push the value of each tile on the board to values
         $(filledSlots).each(function () {
             console.log($(this));
-            if ($(this).hasClass('slot')||
+            if ($(this).hasClass('slot') ||
                 $(this).hasClass('slot')) {
                 numDoubleWordTiles++;
-                }
+            }
             thisValue = parseInt($(this).attr('value'));
             values.push(thisValue);
         });

@@ -15,30 +15,36 @@
 </head>
 
 <body>
+    <script>
+        $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <!--Navbar-->
-    <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.html">
-                <i class="fas fa-home"></i><span class="open-sans"> Home</span>
-            </a>
-            <a class="nav-item nav-link" href="SRS.html">
-                <span class="open-sans">SRS</span>
-            </a>
-            <a class="nav-item nav-link" href="prototype.html">
-                <span class="open-sans">Prototype</span>
-            </a>
-            <a class="nav-item nav-link" href="bibliography.html">
-                <span class="open-sans">Bibliography</span>
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-home"></i><span class="open-sans">X-Browser</span>
             </a>
             <a class="nav-item nav-link" href="team.html">
                 <span class="open-sans">Team</span>
             </a>
+            <a class="nav-item nav-link disabled" href="SRS.html" data-toggle="tooltip" data-placement="bottom" title="Placeholder">
+                <span class="open-sans">SRS</span>
+            </a>
+            <a class="nav-item nav-link disabled" href="prototype.html" data-toggle="tooltip" data-placement="bottom" title="Placeholder">
+                <span class="open-sans">Prototype</span>
+            </a>
+            <a class="nav-item nav-link disabled" href="bibliography.html" data-toggle="tooltip" data-placement="bottom" title="Placeholder">
+                <span class="open-sans">Bibliography</span>
+            </a>
+            
         </div>
     </nav>
-    <div class="container h-100">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
-                This is the homepage for team X-browser-1. This semester (Fall 2020),
+            <div class="col-7 pt-5">
+                This is the homepage for team X-browser-1.<br>This semester (Fall 2020),
                  <a href='Team'>we</a> will be designing and prototyping the X-browser,
                 an Atom plugin that will allow front-end developers to view their website
                  from multiple types of browsers at the same time, in real time. Using
